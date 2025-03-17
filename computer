@@ -1,0 +1,1120 @@
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAK NATIONAL COMPUTER CENTER</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #4CAF50;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            width: 100%;
+            margin-top: 40px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .light-mode {
+            background-color: #f4f4f4;
+            color: #000000;
+        }
+
+        .question-section {
+            margin-bottom: 20px;
+        }
+
+        .question-section h3 {
+            color: #4CAF50;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .question-section h3:hover {
+            color: #45a049;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 10px;
+            padding: 15px;
+            background-color: #333;
+            border-radius: 5px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-btn:hover {
+            background-color: #45a049;
+        }
+
+        .shortcut-keys, .computer-info {
+            margin-top: 20px;
+        }
+
+        .shortcut-keys h2, .computer-info h2 {
+            color: #4CAF50;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .shortcut-keys ul, .computer-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .shortcut-keys li, .computer-info li {
+            background-color: #333;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .shortcut-keys li:hover, .computer-info li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon {
+            margin-right: 10px;
+            color: #4CAF50;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            display: none;
+        }
+
+        .back-to-top:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .toggle-btn, .back-to-top {
+                position: static;
+                margin: 10px;
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+
+    <!-- Header -->
+    <header>
+        <h1>PAK NATIONAL COMPUTER CENTER</h1>
+        <p id="header-text">Welcome to the best computer training center!</p>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#home" id="nav-home"><i class="fas fa-home icon"></i>Home</a>
+        <a href="#courses" id="nav-courses"><i class="fas fa-book icon"></i>Courses</a>
+        <a href="#questions" id="nav-questions"><i class="fas fa-question-circle icon"></i>100 Questions & Answers</a>
+        <a href="#shortcuts" id="nav-shortcuts"><i class="fas fa-keyboard icon"></i>Shortcut Keys</a>
+        <a href="#info" id="nav-info"><i class="fas fa-info-circle icon"></i>Computer Information</a>
+        <a href="#contact" id="nav-contact"><i class="fas fa-phone-alt icon"></i>Contact</a>
+    </nav>
+
+    <!-- Dark Mode Toggle Button -->
+    <button class="toggle-btn" onclick="toggleDarkMode()">Light Mode</button>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i> Back to Top</button>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Home Section -->
+        <section id="home">
+            <h2 id="home-title">Home</h2>
+            <p id="home-text">Hamari website aap ke liye ek complete guide hai, chahe aap computer ke basics seekhna chahte hain ya advanced technology mein mahir hona chahte hain. Hamara mission hai ke har shaks technology ka poora faida utha sake aur digital dunya mein aage badh sake.</p>
+            <p id="mission-text"><strong>Pak National Computer Center</strong> - Technology ka sath, success ka raasta! Ek leading computer education aur services center hai jo students, professionals, aur businesses ko computer se related tamam maloomat aur solutions provide karta hai. Hamara maqsad logon ko technology ke sath connect karna aur unhe computer ki dunya mein confident banane mein madad karna hai.</p>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses">
+            <h2 id="courses-title">Our Courses</h2>
+            <ul id="courses-list">
+                <li><i class="fas fa-laptop-code icon"></i>Basic Computer Course</li>
+                <li><i class="fas fa-code icon"></i>Programming in C, C++, Java</li>
+                <li><i class="fas fa-globe icon"></i>Web Development (HTML, CSS, JavaScript)</li>
+                <li><i class="fas fa-paint-brush icon"></i>Graphic Designing</li>
+                <li><i class="fas fa-file-excel icon"></i>MS Office (Word, Excel, PowerPoint)</li>
+            </ul>
+        </section>
+
+        <!-- 100 Questions & Answers Section -->
+        <section id="questions">
+            <h2 id="questions-title">100 Questions & Answers</h2>
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="number" id="search-input" placeholder="Enter question number (1-100)..." oninput="filterQuestions()">
+            </div>
+            <!-- Questions List -->
+            <div id="questions-list">
+                <div class="question-section">
+<!-- Questions 1 to 100 -->
+<div class="question-section" data-page="1">
+    <h3 onclick="toggleAnswer(1)">Question 1: Computer ka full form kya hai?</h3>
+    <div id="answer1" class="answer">
+        <p><strong>Answer:</strong> Commonly Operated Machine Particularly Used for Technical and Educational Research.</p>
+        <p><strong>Urdu Translation:</strong> کمپیوٹر ایک الیکٹرانک آلہ ہے جو ڈیٹا پر کارروائی کرتا ہے اور ہدایات کے سیٹ کے مطابق کام انجام دیتا ہے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="1">
+    <h3 onclick="toggleAnswer(2)">Question 2: CPU ka full form kya hai?</h3>
+    <div id="answer2" class="answer">
+        <p><strong>Answer:</strong> Central Processing Unit.</p>
+        <p><strong>Urdu Translation:</strong> سنٹرل پروسیسنگ یونٹ۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="1">
+    <h3 onclick="toggleAnswer(3)">Question 3: RAM ka full form kya hai?</h3>
+    <div id="answer3" class="answer">
+        <p><strong>Answer:</strong> Random Access Memory.</p>
+        <p><strong>Urdu Translation:</strong> رینڈم ایکسیس میموری۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="1">
+    <h3 onclick="toggleAnswer(4)">Question 4: ROM ka full form kya hai?</h3>
+    <div id="answer4" class="answer">
+        <p><strong>Answer:</strong> Read-Only Memory.</p>
+        <p><strong>Urdu Translation:</strong> ریڈ-آنلی میموری۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="1">
+    <h3 onclick="toggleAnswer(5)">Question 5: BIOS ka full form kya hai?</h3>
+    <div id="answer5" class="answer">
+        <p><strong>Answer:</strong> Basic Input/Output System.</p>
+        <p><strong>Urdu Translation:</strong> بیسک ان پٹ/آؤٹ پٹ سسٹم۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="1">
+    <h3 onclick="toggleAnswer(6)">Question 6: USB ka full form kya hai?</h3>
+    <div id="answer6" class="answer">
+        <p><strong>Answer:</strong> Universal Serial Bus.</p>
+        <p><strong>Urdu Translation:</strong> یونیورسل سیریل بس۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="1">
+    <h3 onclick="toggleAnswer(7)">Question 7: GUI ka full form kya hai?</h3>
+    <div id="answer7" class="answer">
+        <p><strong>Answer:</strong> Graphical User Interface.</p>
+        <p><strong>Urdu Translation:</strong> گرافیکل یوزر انٹرفیس۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="1">
+    <h3 onclick="toggleAnswer(8)">Question 8: OS ka full form kya hai?</h3>
+    <div id="answer8" class="answer">
+        <p><strong>Answer:</strong> Operating System.</p>
+        <p><strong>Urdu Translation:</strong> آپریٹنگ سسٹم۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="1">
+    <h3 onclick="toggleAnswer(9)">Question 9: WWW ka full form kya hai?</h3>
+    <div id="answer9" class="answer">
+        <p><strong>Answer:</strong> World Wide Web.</p>
+        <p><strong>Urdu Translation:</strong> ورلڈ وائڈ ویب۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="1">
+    <h3 onclick="toggleAnswer(10)">Question 10: HTML ka full form kya hai?</h3>
+    <div id="answer10" class="answer">
+        <p><strong>Answer:</strong> HyperText Markup Language.</p>
+        <p><strong>Urdu Translation:</strong> ہائپر ٹیکسٹ مارک اپ لینگویج۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="2">
+    <h3 onclick="toggleAnswer(11)">Question 11: Computer ka brain kise kaha jata hai?</h3>
+    <div id="answer11" class="answer">
+        <p><strong>Answer:</strong> CPU (Central Processing Unit).</p>
+        <p><strong>Urdu Translation:</strong> سنٹرل پروسیسنگ یونٹ۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="2">
+    <h3 onclick="toggleAnswer(12)">Question 12: Printer kis category ka device hai?</h3>
+    <div id="answer12" class="answer">
+        <p><strong>Answer:</strong> Output Device.</p>
+        <p><strong>Urdu Translation:</strong> آؤٹ پٹ ڈیوائس۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="2">
+    <h3 onclick="toggleAnswer(13)">Question 13: Keyboard kis category ka device hai?</h3>
+    <div id="answer13" class="answer">
+        <p><strong>Answer:</strong> Input Device.</p>
+        <p><strong>Urdu Translation:</strong> ان پٹ ڈیوائس۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="2">
+    <h3 onclick="toggleAnswer(14)">Question 14: Monitor kis category ka device hai?</h3>
+    <div id="answer14" class="answer">
+        <p><strong>Answer:</strong> Output Device.</p>
+        <p><strong>Urdu Translation:</strong> آؤٹ پٹ ڈیوائس۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="2">
+    <h3 onclick="toggleAnswer(15)">Question 15: Hard Disk kis category ka device hai?</h3>
+    <div id="answer15" class="answer">
+        <p><strong>Answer:</strong> Storage Device.</p>
+        <p><strong>Urdu Translation:</strong> اسٹوریج ڈیوائس۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="2">
+    <h3 onclick="toggleAnswer(16)">Question 16: Mouse kis category ka device hai?</h3>
+    <div id="answer16" class="answer">
+        <p><strong>Answer:</strong> Input Device.</p>
+        <p><strong>Urdu Translation:</strong> ان پٹ ڈیوائس۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="2">
+    <h3 onclick="toggleAnswer(17)">Question 17: Scanner kis category ka device hai?</h3>
+    <div id="answer17" class="answer">
+        <p><strong>Answer:</strong> Input Device.</p>
+        <p><strong>Urdu Translation:</strong> ان پٹ ڈیوائس۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="2">
+    <h3 onclick="toggleAnswer(18)">Question 18: Speaker kis category ka device hai?</h3>
+    <div id="answer18" class="answer">
+        <p><strong>Answer:</strong> Output Device.</p>
+        <p><strong>Urdu Translation:</strong> آؤٹ پٹ ڈیوائس۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="2">
+    <h3 onclick="toggleAnswer(19)">Question 19: RAM aur ROM mein kya antar hai?</h3>
+    <div id="answer19" class="answer">
+        <p><strong>Answer:</strong> RAM temporary memory hai aur ROM permanent memory hai.</p>
+        <p><strong>Urdu Translation:</strong> RAM عارضی میموری ہے اور ROM مستقل میموری ہے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="2">
+    <h3 onclick="toggleAnswer(20)">Question 20: Motherboard kya hai?</h3>
+    <div id="answer20" class="answer">
+        <p><strong>Answer:</strong> Yeh computer ka main circuit board hai jo sabhi components ko connect karta hai.</p>
+        <p><strong>Urdu Translation:</strong> یہ کمپیوٹر کا مرکزی سرکٹ بورڈ ہے جو تمام اجزاء کو جوڑتا ہے۔</p>
+    </div>
+</div>
+<!-- Repeat this structure for all 100 questions --><!-- Questions 21 to 100 -->
+<div class="question-section" data-page="3">
+    <h3 onclick="toggleAnswer(21)">Question 21: Operating System kya hai?</h3>
+    <div id="answer21" class="answer">
+        <p><strong>Answer:</strong> Yeh ek software hai jo computer ke hardware aur user ke beech interface ka kaam karta hai.</p>
+        <p><strong>Urdu Translation:</strong> یہ ایک سافٹ ویئر ہے جو کمپیوٹر کے ہارڈویئر اور صارف کے درمیان انٹرفیس کا کام کرتا ہے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="3">
+    <h3 onclick="toggleAnswer(22)">Question 22: Windows ka developer kaun hai?</h3>
+    <div id="answer22" class="answer">
+        <p><strong>Answer:</strong> Microsoft.</p>
+        <p><strong>Urdu Translation:</strong> مائیکروسافٹ۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="3">
+    <h3 onclick="toggleAnswer(23)">Question 23: Linux ek example hai?</h3>
+    <div id="answer23" class="answer">
+        <p><strong>Answer:</strong> Open-source operating system ka.</p>
+        <p><strong>Urdu Translation:</strong> اوپن سورس آپریٹنگ سسٹم کا۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="3">
+    <h3 onclick="toggleAnswer(24)">Question 24: Antivirus software kya hai?</h3>
+    <div id="answer24" class="answer">
+        <p><strong>Answer:</strong> Yeh ek program hai jo computer ko viruses se bachata hai.</p>
+        <p><strong>Urdu Translation:</strong> یہ ایک پروگرام ہے جو کمپیوٹر کو وائرس سے بچاتا ہے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="3">
+    <h3 onclick="toggleAnswer(25)">Question 25: MS Word kis company ka product hai?</h3>
+    <div id="answer25" class="answer">
+        <p><strong>Answer:</strong> Microsoft.</p>
+        <p><strong>Urdu Translation:</strong> مائیکروسافٹ۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="3">
+    <h3 onclick="toggleAnswer(26)">Question 26: MS Excel kis company ka product hai?</h3>
+    <div id="answer26" class="answer">
+        <p><strong>Answer:</strong> Microsoft.</p>
+        <p><strong>Urdu Translation:</strong> مائیکروسافٹ۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="3">
+    <h3 onclick="toggleAnswer(27)">Question 27: MS PowerPoint kis company ka product hai?</h3>
+    <div id="answer27" class="answer">
+        <p><strong>Answer:</strong> Microsoft.</p>
+        <p><strong>Urdu Translation:</strong> مائیکروسافٹ۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="3">
+    <h3 onclick="toggleAnswer(28)">Question 28: Photoshop kis company ka product hai?</h3>
+    <div id="answer28" class="answer">
+        <p><strong>Answer:</strong> Adobe.</p>
+        <p><strong>Urdu Translation:</strong> ایڈوب۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="3">
+    <h3 onclick="toggleAnswer(29)">Question 29: Android kis company ka product hai?</h3>
+    <div id="answer29" class="answer">
+        <p><strong>Answer:</strong> Google.</p>
+        <p><strong>Urdu Translation:</strong> گوگل۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="3">
+    <h3 onclick="toggleAnswer(30)">Question 30: iOS kis company ka product hai?</h3>
+    <div id="answer30" class="answer">
+        <p><strong>Answer:</strong> Apple.</p>
+        <p><strong>Urdu Translation:</strong> ایپل۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="4">
+    <h3 onclick="toggleAnswer(31)">Question 31: Internet ka full form kya hai?</h3>
+    <div id="answer31" class="answer">
+        <p><strong>Answer:</strong> Interconnected Network.</p>
+        <p><strong>Urdu Translation:</strong> باہم جڑا ہوا نیٹ ورک۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="4">
+    <h3 onclick="toggleAnswer(32)">Question 32: URL ka full form kya hai?</h3>
+    <div id="answer32" class="answer">
+        <p><strong>Answer:</strong> Uniform Resource Locator.</p>
+        <p><strong>Urdu Translation:</strong> یکساں وسائل لوکیٹر۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="4">
+    <h3 onclick="toggleAnswer(33)">Question 33: HTTP ka full form kya hai?</h3>
+    <div id="answer33" class="answer">
+        <p><strong>Answer:</strong> HyperText Transfer Protocol.</p>
+        <p><strong>Urdu Translation:</strong> ہائپر ٹیکسٹ ٹرانسفر پروٹوکول۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="4">
+    <h3 onclick="toggleAnswer(34)">Question 34: HTTPS ka full form kya hai?</h3>
+    <div id="answer34" class="answer">
+        <p><strong>Answer:</strong> HyperText Transfer Protocol Secure.</p>
+        <p><strong>Urdu Translation:</strong> ہائپر ٹیکسٹ ٹرانسفر پروٹوکول سیکور۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="4">
+    <h3 onclick="toggleAnswer(35)">Question 35: IP address ka full form kya hai?</h3>
+    <div id="answer35" class="answer">
+        <p><strong>Answer:</strong> Internet Protocol Address.</p>
+        <p><strong>Urdu Translation:</strong> انٹرنیٹ پروٹوکول ایڈریس۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="4">
+    <h3 onclick="toggleAnswer(36)">Question 36: Wi-Fi ka full form kya hai?</h3>
+    <div id="answer36" class="answer">
+        <p><strong>Answer:</strong> Wireless Fidelity.</p>
+        <p><strong>Urdu Translation:</strong> وائرلیس فیڈیلیٹی۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="4">
+    <h3 onclick="toggleAnswer(37)">Question 37: LAN ka full form kya hai?</h3>
+    <div id="answer37" class="answer">
+        <p><strong>Answer:</strong> Local Area Network.</p>
+        <p><strong>Urdu Translation:</strong> لوکل ایریا نیٹ ورک۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="4">
+    <h3 onclick="toggleAnswer(38)">Question 38: WAN ka full form kya hai?</h3>
+    <div id="answer38" class="answer">
+        <p><strong>Answer:</strong> Wide Area Network.</p>
+        <p><strong>Urdu Translation:</strong> وائیڈ ایریا نیٹ ورک۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="4">
+    <h3 onclick="toggleAnswer(39)">Question 39: VPN ka full form kya hai?</h3>
+    <div id="answer39" class="answer">
+        <p><strong>Answer:</strong> Virtual Private Network.</p>
+        <p><strong>Urdu Translation:</strong> ورچوئل پرائیویٹ نیٹ ورک۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="4">
+    <h3 onclick="toggleAnswer(40)">Question 40: DNS ka full form kya hai?</h3>
+    <div id="answer40" class="answer">
+        <p><strong>Answer:</strong> Domain Name System.</p>
+        <p><strong>Urdu Translation:</strong> ڈومین نیم سسٹم۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="5">
+    <h3 onclick="toggleAnswer(41)">Question 41: C language ka developer kaun hai?</h3>
+    <div id="answer41" class="answer">
+        <p><strong>Answer:</strong> Dennis Ritchie.</p>
+        <p><strong>Urdu Translation:</strong> ڈینس رچی۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="5">
+    <h3 onclick="toggleAnswer(42)">Question 42: Java ka developer kaun hai?</h3>
+    <div id="answer42" class="answer">
+        <p><strong>Answer:</strong> James Gosling.</p>
+        <p><strong>Urdu Translation:</strong> جیمز گوسلنگ۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="5">
+    <h3 onclick="toggleAnswer(43)">Question 43: Python ka developer kaun hai?</h3>
+    <div id="answer43" class="answer">
+        <p><strong>Answer:</strong> Guido van Rossum.</p>
+        <p><strong>Urdu Translation:</strong> گائیڈو وین روسم۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="5">
+    <h3 onclick="toggleAnswer(44)">Question 44: JavaScript kis company ne banaya hai?</h3>
+    <div id="answer44" class="answer">
+        <p><strong>Answer:</strong> Netscape.</p>
+        <p><strong>Urdu Translation:</strong> نیٹ اسکیپ۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="5">
+    <h3 onclick="toggleAnswer(45)">Question 45: HTML ka use kya hai?</h3>
+    <div id="answer45" class="answer">
+        <p><strong>Answer:</strong> Web pages banane ke liye.</p>
+        <p><strong>Urdu Translation:</strong> ویب پیجز بنانے کے لیے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="5">
+    <h3 onclick="toggleAnswer(46)">Question 46: CSS ka use kya hai?</h3>
+    <div id="answer46" class="answer">
+        <p><strong>Answer:</strong> Web pages ko style karne ke liye.</p>
+        <p><strong>Urdu Translation:</strong> ویب پیجز کو سٹائل کرنے کے لیے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="5">
+    <h3 onclick="toggleAnswer(47)">Question 47: SQL ka use kya hai?</h3>
+    <div id="answer47" class="answer">
+        <p><strong>Answer:</strong> Database manage karne ke liye.</p>
+        <p><strong>Urdu Translation:</strong> ڈیٹا بیس مینج کرنے کے لیے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="5">
+    <h3 onclick="toggleAnswer(48)">Question 48: PHP ka use kya hai?</h3>
+    <div id="answer48" class="answer">
+        <p><strong>Answer:</strong> Server-side scripting ke liye.</p>
+        <p><strong>Urdu Translation:</strong> سرور سائڈ اسکرپٹنگ کے لیے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="5">
+    <h3 onclick="toggleAnswer(49)">Question 49: API ka full form kya hai?</h3>
+    <div id="answer49" class="answer">
+        <p><strong>Answer:</strong> Application Programming Interface.</p>
+        <p><strong>Urdu Translation:</strong> ایپلیکیشن پروگرامنگ انٹرفیس۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="5">
+    <h3 onclick="toggleAnswer(50)">Question 50: SDK ka full form kya hai?</h3>
+    <div id="answer50" class="answer">
+        <p><strong>Answer:</strong> Software Development Kit.</p>
+        <p><strong>Urdu Translation:</strong> سافٹ ویئر ڈویلپمنٹ کٹ۔</p>
+    </div>
+</div>
+<!-- Repeat this structure for all 100 questions --><!-- Questions 51 to 100 -->
+<div class="question-section" data-page="6">
+    <h3 onclick="toggleAnswer(51)">Question 51: Binary number system mein kitne digits hote hain?</h3>
+    <div id="answer51" class="answer">
+        <p><strong>Answer:</strong> 2 (0 aur 1).</p>
+        <p><strong>Urdu Translation:</strong> 2 (0 اور 1)۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="6">
+    <h3 onclick="toggleAnswer(52)">Question 52: Bit ka full form kya hai?</h3>
+    <div id="answer52" class="answer">
+        <p><strong>Answer:</strong> Binary Digit.</p>
+        <p><strong>Urdu Translation:</strong> بائنری ڈیجٹ۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="6">
+    <h3 onclick="toggleAnswer(53)">Question 53: Byte mein kitne bits hote hain?</h3>
+    <div id="answer53" class="answer">
+        <p><strong>Answer:</strong> 8 bits.</p>
+        <p><strong>Urdu Translation:</strong> 8 بٹس۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="6">
+    <h3 onclick="toggleAnswer(54)">Question 54: 1 KB mein kitne bytes hote hain?</h3>
+    <div id="answer54" class="answer">
+        <p><strong>Answer:</strong> 1024 bytes.</p>
+        <p><strong>Urdu Translation:</strong> 1024 بائٹس۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="6">
+    <h3 onclick="toggleAnswer(55)">Question 55: 1 MB mein kitne KB hote hain?</h3>
+    <div id="answer55" class="answer">
+        <p><strong>Answer:</strong> 1024 KB.</p>
+        <p><strong>Urdu Translation:</strong> 1024 KB۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="6">
+    <h3 onclick="toggleAnswer(56)">Question 56: 1 GB mein kitne MB hote hain?</h3>
+    <div id="answer56" class="answer">
+        <p><strong>Answer:</strong> 1024 MB.</p>
+        <p><strong>Urdu Translation:</strong> 1024 MB۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="6">
+    <h3 onclick="toggleAnswer(57)">Question 57: 1 TB mein kitne GB hote hain?</h3>
+    <div id="answer57" class="answer">
+        <p><strong>Answer:</strong> 1024 GB.</p>
+        <p><strong>Urdu Translation:</strong> 1024 GB۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="6">
+    <h3 onclick="toggleAnswer(58)">Question 58: PDF ka full form kya hai?</h3>
+    <div id="answer58" class="answer">
+        <p><strong>Answer:</strong> Portable Document Format.</p>
+        <p><strong>Urdu Translation:</strong> پورٹیبل ڈاکیومینٹ فارمیٹ۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="6">
+    <h3 onclick="toggleAnswer(59)">Question 59: JPEG ka full form kya hai?</h3>
+    <div id="answer59" class="answer">
+        <p><strong>Answer:</strong> Joint Photographic Experts Group.</p>
+        <p><strong>Urdu Translation:</strong> جوائنٹ فوٹوگرافک ایکسپرٹس گروپ۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="6">
+    <h3 onclick="toggleAnswer(60)">Question 60: PNG ka full form kya hai?</h3>
+    <div id="answer60" class="answer">
+        <p><strong>Answer:</strong> Portable Network Graphics.</p>
+        <p><strong>Urdu Translation:</strong> پورٹیبل نیٹ ورک گرافکس۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="7">
+    <h3 onclick="toggleAnswer(61)">Question 61: GIF ka full form kya hai?</h3>
+    <div id="answer61" class="answer">
+        <p><strong>Answer:</strong> Graphics Interchange Format.</p>
+        <p><strong>Urdu Translation:</strong> گرافکس انٹرچینج فارمیٹ۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="7">
+    <h3 onclick="toggleAnswer(62)">Question 62: AI ka full form kya hai?</h3>
+    <div id="answer62" class="answer">
+        <p><strong>Answer:</strong> Artificial Intelligence.</p>
+        <p><strong>Urdu Translation:</strong> مصنوعی ذہانت۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="7">
+    <h3 onclick="toggleAnswer(63)">Question 63: VR ka full form kya hai?</h3>
+    <div id="answer63" class="answer">
+        <p><strong>Answer:</strong> Virtual Reality.</p>
+        <p><strong>Urdu Translation:</strong> ورچوئل رئیلٹی۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="7">
+    <h3 onclick="toggleAnswer(64)">Question 64: AR ka full form kya hai?</h3>
+    <div id="answer64" class="answer">
+        <p><strong>Answer:</strong> Augmented Reality.</p>
+        <p><strong>Urdu Translation:</strong> آگمینٹڈ رئیلٹی۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="7">
+    <h3 onclick="toggleAnswer(65)">Question 65: IoT ka full form kya hai?</h3>
+    <div id="answer65" class="answer">
+        <p><strong>Answer:</strong> Internet of Things.</p>
+        <p><strong>Urdu Translation:</strong> انٹرنیٹ آف تھنگز۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="7">
+    <h3 onclick="toggleAnswer(66)">Question 66: URL mein "www" ka matlab kya hai?</h3>
+    <div id="answer66" class="answer">
+        <p><strong>Answer:</strong> World Wide Web.</p>
+        <p><strong>Urdu Translation:</strong> ورلڈ وائڈ ویب۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="7">
+    <h3 onclick="toggleAnswer(67)">Question 67: Email ka full form kya hai?</h3>
+    <div id="answer67" class="answer">
+        <p><strong>Answer:</strong> Electronic Mail.</p>
+        <p><strong>Urdu Translation:</strong> الیکٹرانک میل۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="7">
+    <h3 onclick="toggleAnswer(68)">Question 68: SMS ka full form kya hai?</h3>
+    <div id="answer68" class="answer">
+        <p><strong>Answer:</strong> Short Message Service.</p>
+        <p><strong>Urdu Translation:</strong> شارٹ میسج سروس۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="7">
+    <h3 onclick="toggleAnswer(69)">Question 69: SIM ka full form kya hai?</h3>
+    <div id="answer69" class="answer">
+        <p><strong>Answer:</strong> Subscriber Identity Module.</p>
+        <p><strong>Urdu Translation:</strong> سبسکرائبر آئیڈینٹیٹی ماڈیول۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="7">
+    <h3 onclick="toggleAnswer(70)">Question 70: GPS ka full form kya hai?</h3>
+    <div id="answer70" class="answer">
+        <p><strong>Answer:</strong> Global Positioning System.</p>
+        <p><strong>Urdu Translation:</strong> گلوبل پوزیشننگ سسٹم۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="8">
+    <h3 onclick="toggleAnswer(71)">Question 71: CPU ke do main parts kaun se hain?</h3>
+    <div id="answer71" class="answer">
+        <p><strong>Answer:</strong> ALU (Arithmetic Logic Unit) aur CU (Control Unit).</p>
+        <p><strong>Urdu Translation:</strong> ALU (ارتھمیٹک لاجک یونٹ) اور CU (کنٹرول یونٹ)۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="8">
+    <h3 onclick="toggleAnswer(72)">Question 72: ALU ka full form kya hai?</h3>
+    <div id="answer72" class="answer">
+        <p><strong>Answer:</strong> Arithmetic Logic Unit.</p>
+        <p><strong>Urdu Translation:</strong> ارتھمیٹک لاجک یونٹ۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="8">
+    <h3 onclick="toggleAnswer(73)">Question 73: CU ka full form kya hai?</h3>
+    <div id="answer73" class="answer">
+        <p><strong>Answer:</strong> Control Unit.</p>
+        <p><strong>Urdu Translation:</strong> کنٹرول یونٹ۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="8">
+    <h3 onclick="toggleAnswer(74)">Question 74: Cache memory kya hai?</h3>
+    <div id="answer74" class="answer">
+        <p><strong>Answer:</strong> Yeh ek high-speed memory hai jo CPU ke kaam ko tez karti hai.</p>
+        <p><strong>Urdu Translation:</strong> یہ ایک ہائی اسپیڈ میموری ہے جو CPU کے کام کو تیز کرتی ہے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="8">
+    <h3 onclick="toggleAnswer(75)">Question 75: SSD ka full form kya hai?</h3>
+    <div id="answer75" class="answer">
+        <p><strong>Answer:</strong> Solid State Drive.</p>
+        <p><strong>Urdu Translation:</strong> سولڈ اسٹیٹ ڈرائیو۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="8">
+    <h3 onclick="toggleAnswer(76)">Question 76: HDD ka full form kya hai?</h3>
+    <div id="answer76" class="answer">
+        <p><strong>Answer:</strong> Hard Disk Drive.</p>
+        <p><strong>Urdu Translation:</strong> ہارڈ ڈسک ڈرائیو۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="8">
+    <h3 onclick="toggleAnswer(77)">Question 77: SSD aur HDD mein kya antar hai?</h3>
+    <div id="answer77" class="answer">
+        <p><strong>Answer:</strong> SSD faster aur reliable hai, jabki HDD sasta aur zyada storage deta hai.</p>
+        <p><strong>Urdu Translation:</strong> SSD تیز اور قابل اعتماد ہے، جبکہ HDD سستا اور زیادہ اسٹوریج دیتا ہے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="8">
+    <h3 onclick="toggleAnswer(78)">Question 78: GPU ka full form kya hai?</h3>
+    <div id="answer78" class="answer">
+        <p><strong>Answer:</strong> Graphics Processing Unit.</p>
+        <p><strong>Urdu Translation:</strong> گرافکس پروسیسنگ یونٹ۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="8">
+    <h3 onclick="toggleAnswer(79)">Question 79: GPU ka use kya hai?</h3>
+    <div id="answer79" class="answer">
+        <p><strong>Answer:</strong> Graphics rendering aur video processing ke liye.</p>
+        <p><strong>Urdu Translation:</strong> گرافکس رینڈرنگ اور ویڈیو پروسیسنگ کے لیے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="8">
+    <h3 onclick="toggleAnswer(80)">Question 80: BIOS ka use kya hai?</h3>
+    <div id="answer80" class="answer">
+        <p><strong>Answer:</strong> Computer ko start karte waqt hardware check karne ke liye.</p>
+        <p><strong>Urdu Translation:</strong> کمپیوٹر کو شروع کرتے وقت ہارڈویئر چیک کرنے کے لیے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(81)">Question 81: POST ka full form kya hai?</h3>
+    <div id="answer81" class="answer">
+        <p><strong>Answer:</strong> Power-On Self-Test.</p>
+        <p><strong>Urdu Translation:</strong> پاور آن سیلف ٹیسٹ۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(82)">Question 82: POST ka use kya hai?</h3>
+    <div id="answer82" class="answer">
+        <p><strong>Answer:</strong> Computer start hote waqt hardware check karne ke liye.</p>
+        <p><strong>Urdu Translation:</strong> کمپیوٹر شروع ہوتے وقت ہارڈویئر چیک کرنے کے لیے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(83)">Question 83: Cloud computing kya hai?</h3>
+    <div id="answer83" class="answer">
+        <p><strong>Answer:</strong> Internet ke through services aur resources provide karna.</p>
+        <p><strong>Urdu Translation:</strong> انٹرنیٹ کے ذریعے خدمات اور وسائل فراہم کرنا۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(84)">Question 84: SaaS ka full form kya hai?</h3>
+    <div id="answer84" class="answer">
+        <p><strong>Answer:</strong> Software as a Service.</p>
+        <p><strong>Urdu Translation:</strong> سافٹ ویئر بطور سروس۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(85)">Question 85: PaaS ka full form kya hai?</h3>
+    <div id="answer85" class="answer">
+        <p><strong>Answer:</strong> Platform as a Service.</p>
+        <p><strong>Urdu Translation:</strong> پلیٹ فارم بطور سروس۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(86)">Question 86: IaaS ka full form kya hai?</h3>
+    <div id="answer86" class="answer">
+        <p><strong>Answer:</strong> Infrastructure as a Service.</p>
+        <p><strong>Urdu Translation:</strong> انفراسٹرکچر بطور سروس۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(87)">Question 87: Firewall kya hai?</h3>
+    <div id="answer87" class="answer">
+        <p><strong>Answer:</strong> Ek security system jo network ko unauthorized access se bachata hai.</p>
+        <p><strong>Urdu Translation:</strong> ایک سیکیورٹی سسٹم جو نیٹ ورک کو غیر مجاز رسائی سے بچاتا ہے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(88)">Question 88: Malware kya hai?</h3>
+    <div id="answer88" class="answer">
+        <p><strong>Answer:</strong> Malicious software jo computer ko nuksan pahunchata hai.</p>
+        <p><strong>Urdu Translation:</strong> بدنیتی پر مبنی سافٹ ویئر جو کمپیوٹر کو نقصان پہنچاتا ہے۔</p>
+    </div>
+</div>
+<div class="question<!-- Questions 88 to 100 -->
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(88)">Question 88: Malware kya hai?</h3>
+    <div id="answer88" class="answer">
+        <p><strong>Answer:</strong> Malicious software jo computer ko nuksan pahunchata hai.</p>
+        <p><strong>Urdu Translation:</strong> بدنیتی پر مبنی سافٹ ویئر جو کمپیوٹر کو نقصان پہنچاتا ہے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(89)">Question 89: Phishing kya hai?</h3>
+    <div id="answer89" class="answer">
+        <p><strong>Answer:</strong> Ek tarika jisme hackers sensitive information churate hain.</p>
+        <p><strong>Urdu Translation:</strong> ایک طریقہ جس میں ہیکرز حساس معلومات چراتے ہیں۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(90)">Question 90: Encryption kya hai?</h3>
+    <div id="answer90" class="answer">
+        <p><strong>Answer:</strong> Data ko secure karne ka tarika.</p>
+        <p><strong>Urdu Translation:</strong> ڈیٹا کو محفوظ کرنے کا طریقہ۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(91)">Question 91: Decryption kya hai?</h3>
+    <div id="answer91" class="answer">
+        <p><strong>Answer:</strong> Encrypted data ko wapas original form mein convert karna.</p>
+        <p><strong>Urdu Translation:</strong> خفیہ کردہ ڈیٹا کو واپس اصل شکل میں تبدیل کرنا۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(92)">Question 92: Blockchain kya hai?</h3>
+    <div id="answer92" class="answer">
+        <p><strong>Answer:</strong> Ek decentralized ledger technology.</p>
+        <p><strong>Urdu Translation:</strong> ایک ڈیسنٹرلائزڈ لیجر ٹیکنالوجی۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(93)">Question 93: Bitcoin kya hai?</h3>
+    <div id="answer93" class="answer">
+        <p><strong>Answer:</strong> Ek cryptocurrency.</p>
+        <p><strong>Urdu Translation:</strong> ایک کرپٹو کرنسی۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(94)">Question 94: Cryptocurrency kya hai?</h3>
+    <div id="answer94" class="answer">
+        <p><strong>Answer:</strong> Digital currency jo encryption techniques se secure hoti hai.</p>
+        <p><strong>Urdu Translation:</strong> ڈیجیٹل کرنسی جو خفیہ کاری کی تکنیکوں سے محفوظ ہوتی ہے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(95)">Question 95: AI ka use kahan hota hai?</h3>
+    <div id="answer95" class="answer">
+        <p><strong>Answer:</strong> Robotics, healthcare, finance, aur gaming mein.</p>
+        <p><strong>Urdu Translation:</strong> روبوٹکس، ہیلتھ کیئر، فنانس، اور گیمنگ میں۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(96)">Question 96: Machine Learning kya hai?</h3>
+    <div id="answer96" class="answer">
+        <p><strong>Answer:</strong> AI ka ek subset jo systems ko data se seekhne mein madad karta hai.</p>
+        <p><strong>Urdu Translation:</strong> مصنوعی ذہانت کا ایک ذیلی مجموعہ جو نظاموں کو ڈیٹا سے سیکھنے میں مدد دیتا ہے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(97)">Question 97: Deep Learning kya hai?</h3>
+    <div id="answer97" class="answer">
+        <p><strong>Answer:</strong> Machine Learning ka ek advanced version jo neural networks ka use karta hai.</p>
+        <p><strong>Urdu Translation:</strong> مشین لرننگ کا ایک جدید ورژن جو نیورل نیٹ ورکس کا استعمال کرتا ہے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(98)">Question 98: Big Data kya hai?</h3>
+    <div id="answer98" class="answer">
+        <p><strong>Answer:</strong> Bahut bade aur complex data sets jo traditional tools se process nahi ho sakte.</p>
+        <p><strong>Urdu Translation:</strong> بہت بڑے اور پیچیدہ ڈیٹا سیٹس جو روایتی ٹولز سے پروسیس نہیں ہو سکتے۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(99)">Question 99: Data Mining kya hai?</h3>
+    <div id="answer99" class="answer">
+        <p><strong>Answer:</strong> Large data sets mein patterns aur trends dhundhna.</p>
+        <p><strong>Urdu Translation:</strong> بڑے ڈیٹا سیٹس میں پیٹرن اور رجحانات تلاش کرنا۔</p>
+    </div>
+</div>
+<div class="question-section" data-page="9">
+    <h3 onclick="toggleAnswer(100)">Question 100: Quantum Computing kya hai?</h3>
+    <div id="answer100" class="answer">
+        <p><strong>Answer:</strong> Computing ka ek naya tarika jo quantum mechanics ke principles par kaam karta hai.</p>
+        <p><strong>Urdu Translation:</strong> کمپیوٹنگ کا ایک نیا طریقہ جو کوانٹم میکینکس کے اصولوں پر کام کرتا ہے۔</p>
+    </div>
+</div>
+                    </div>
+                </div>
+                <!-- Add more questions here -->
+            </div>
+        </section>
+
+        <!-- Shortcut Keys Section -->
+        <section id="shortcuts" class="shortcut-keys">
+            <h2 id="shortcuts-title">Shortcut Keys</h2>
+            <h3 id="word-shortcuts">MS Word Shortcuts</h3>
+            <ul id="word-list">
+                <li><i class="fas fa-copy icon"></i><strong>Ctrl + C:</strong> Copy</li>
+                <li><i class="fas fa-paste icon"></i><strong>Ctrl + V:</strong> Paste</li>
+                <li><i class="fas fa-cut icon"></i><strong>Ctrl + X:</strong> Cut</li>
+                <li><i class="fas fa-save icon"></i><strong>Ctrl + S:</strong> Save</li>
+                <li><i class="fas fa-print icon"></i><strong>Ctrl + P:</strong> Print</li>
+                <li><i class="fas fa-bold icon"></i><strong>Ctrl + B:</strong> Bold</li>
+                <li><i class="fas fa-italic icon"></i><strong>Ctrl + I:</strong> Italic</li>
+                <li><i class="fas fa-underline icon"></i><strong>Ctrl + U:</strong> Underline</li>
+                <li><i class="fas fa-align-left icon"></i><strong>Ctrl + L:</strong> Align Left</li>
+                <li><i class="fas fa-align-center icon"></i><strong>Ctrl + E:</strong> Center Align</li>
+            </ul>
+            <h3 id="excel-shortcuts">MS Excel Shortcuts</h3>
+            <ul id="excel-list">
+                <li><i class="fas fa-file icon"></i><strong>Ctrl + N:</strong> New Workbook</li>
+                <li><i class="fas fa-folder-open icon"></i><strong>Ctrl + O:</strong> Open Workbook</li>
+                <li><i class="fas fa-save icon"></i><strong>Ctrl + S:</strong> Save Workbook</li>
+                <li><i class="fas fa-undo icon"></i><strong>Ctrl + Z:</strong> Undo</li>
+                <li><i class="fas fa-redo icon"></i><strong>Ctrl + Y:</strong> Redo</li>
+                <li><i class="fas fa-plus icon"></i><strong>Ctrl + Plus (+):</strong> Insert Row/Column</li>
+                <li><i class="fas fa-minus icon"></i><strong>Ctrl + Minus (-):</strong> Delete Row/Column</li>
+                <li><i class="fas fa-search icon"></i><strong>Ctrl + F:</strong> Find</li>
+                <li><i class="fas fa-replace icon"></i><strong>Ctrl + H:</strong> Replace</li>
+                <li><i class="fas fa-table icon"></i><strong>Ctrl + T:</strong> Create Table</li>
+            </ul>
+            <h3 id="windows-shortcuts">Windows Shortcuts</h3>
+            <ul id="windows-list">
+                <li><i class="fas fa-window-restore icon"></i><strong>Alt + Tab:</strong> Switch Between Apps</li>
+                <li><i class="fas fa-desktop icon"></i><strong>Win + D:</strong> Show Desktop</li>
+                <li><i class="fas fa-lock icon"></i><strong>Win + L:</strong> Lock Computer</li>
+                <li><i class="fas fa-search icon"></i><strong>Win + S:</strong> Open Search</li>
+                <li><i class="fas fa-expand icon"></i><strong>Win + Up Arrow:</strong> Maximize Window</li>
+                <li><i class="fas fa-compress icon"></i><strong>Win + Down Arrow:</strong> Minimize Window</li>
+                <li><i class="fas fa-copy icon"></i><strong>Win + V:</strong> Open Clipboard History</li>
+                <li><i class="fas fa-screenshot icon"></i><strong>Win + Shift + S:</strong> Take Screenshot</li>
+                <li><i class="fas fa-tasks icon"></i><strong>Ctrl + Shift + Esc:</strong> Open Task Manager</li>
+                <li><i class="fas fa-power-off icon"></i><strong>Alt + F4:</strong> Close Active Window</li>
+            </ul>
+        </section>
+
+        <!-- Computer Information Section -->
+        <section id="info" class="computer-info">
+            <h2 id="info-title">Computer Information</h2>
+            <ul id="info-list">
+                <li><i class="fas fa-microchip icon"></i><strong>CPU:</strong> Central Processing Unit - The brain of the computer.</li>
+                <li><i class="fas fa-desktop icon"></i><strong>GPU:</strong> Graphics Processing Unit - Handles graphics rendering.</li>
+                <li><i class="fas fa-memory icon"></i><strong>RAM:</strong> Random Access Memory - Temporary storage for running applications.</li>
+                <li><i class="fas fa-hdd icon"></i><strong>Hard Drive:</strong> Permanent storage for files and programs.</li>
+                <li><i class="fas fa-microchip icon"></i><strong>Motherboard:</strong> The main circuit board connecting all components.</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 id="contact-title">Contact Us</h2>
+            <p id="contact-address"><i class="fas fa-map-marker-alt icon"></i>Address: NEAR MIRZA QALECH BAIG SCHOOL TANDO ADAM </p>
+            <p id="contact-phone"><i class="fas fa-phone icon"></i>Phone: 03352065310/03143885250</p>
+            <p id="contact-email"><i class="fas fa-envelope icon"></i>Email: aslamkhan15670@gmail.com</p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p id="footer-text">&copy; 2025 PAK NATIONAL COMPUTER CENTER. All rights reserved. MADE BY SIR HYDER KHAN </p>
+    </footer>
+
+    <!-- JavaScript for Dark Mode, Toggle Answers, and Back to Top -->
+    <script>
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            const body = document.body;
+            const btn = document.querySelector('.toggle-btn');
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                btn.textContent = 'Dark Mode';
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                btn.textContent = 'Light Mode';
+            }
+        }
+
+        // Toggle Answers
+        function toggleAnswer(id) {
+            const answer = document.getElementById(`answer${id}`);
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+            } else {
+                answer.style.display = "block";
+            }
+        }
+
+        // Back to Top Button
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show/Hide Back to Top Button
+        window.onscroll = function() {
+            const backToTopBtn = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        // Search Functionality
+        function filterQuestions() {
+            const input = document.getElementById('search-input').value;
+            const questions = document.querySelectorAll('.question-section h3');
+            questions.forEach((question, index) => {
+                if (input === "" || (index + 1) === parseInt(input)) {
+                    question.parentElement.style.display = "block";
+                } else {
+                    question.parentElement.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
